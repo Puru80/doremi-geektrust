@@ -1,4 +1,4 @@
-package com.example.geektrust;
+package com.example.doremi;
 
 import java.io.FileInputStream;
 import java.io.IOException;
