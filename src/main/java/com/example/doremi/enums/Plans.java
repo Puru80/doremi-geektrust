@@ -1,9 +1,9 @@
 package com.example.doremi.enums;
 
 public enum Plans {
-    FREE("Free", 0),
-    PERSONAL("Personal", 1),
-    PREMIUM("Premium", 3);
+    FREE("FREE", 0),
+    PERSONAL("PERSONAL", 1),
+    PREMIUM("PREMIUM", 3);
 
     public final String name;
     public final int months;

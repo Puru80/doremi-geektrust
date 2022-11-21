@@ -1,9 +1,9 @@
 package com.example.doremi.enums;
 
 public enum SubscriptionCategory {
-    MUSIC("Music", 100, 250),
-    VIDEO("Video", 200, 500),
-    PODCAST("Podcast", 100, 300);
+    MUSIC("MUSIC", 100, 250),
+    VIDEO("VIDEO", 200, 500),
+    PODCAST("PODCAST", 100, 300);
 
     public final String name;
     public final int personal;

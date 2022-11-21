@@ -1,5 +1,7 @@
 package com.example.doremi;
 
+import com.example.doremi.controller.Controller;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Scanner;
@@ -12,7 +14,9 @@ public class Main {
             Scanner sc = new Scanner(fis);
 
             while (sc.hasNextLine()) {
+                String commands[] = sc.nextLine().split(" ");
 
+                Controller.route(commands);
             }
             sc.close();
         } catch (IOException e) {
