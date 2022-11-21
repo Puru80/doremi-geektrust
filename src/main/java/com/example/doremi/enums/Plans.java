@@ -1,7 +1,7 @@
 package com.example.doremi.enums;
 
 public enum Plans {
-    FREE("FREE", 0),
+    FREE("FREE", 1),
     PERSONAL("PERSONAL", 1),
     PREMIUM("PREMIUM", 3);
 
