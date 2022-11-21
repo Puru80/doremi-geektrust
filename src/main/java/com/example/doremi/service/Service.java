@@ -31,7 +31,7 @@ public class Service {
     }
 
     public static void addSubscriptionCategory(SubscriptionCategory subscriptionCategory, Plans plans) {
-        if(subscriptionEntity.getStartDate().equals(null)) {
+        if (subscriptionEntity.getStartDate() == null) {
             System.out.println("ADD_SUBSCRIPTION_FAILED INVALID_DATE");
             return;
         }
@@ -45,12 +45,17 @@ public class Service {
     }
 
     public static void addTopUp(TopUp topUp, int months) {
+        if (subscriptionEntity.getStartDate() == null) {
+            System.out.println("ADD_TOPUP_FAILED INVALID_DATE");
+            return;
+        }
+
         if (subscriptionEntity.getSubscriptions().isEmpty()) {
             System.out.println("ADD_TOPUP_FAILED SUBSCRIPTIONS_NOT_FOUND");
             return;
         }
 
-        if (!subscriptionEntity.getTopUp().equals(null)) {
+        if (subscriptionEntity.getTopUp() != null) {
             System.out.println("ADD_TOPUP_FAILED DUPLICATE_TOPUP");
             return;
         }
@@ -87,7 +92,8 @@ public class Service {
             }
         }
 
-        amount += subscriptionEntity.getTopUpTime() * subscriptionEntity.getTopUp().cost;
+        if (subscriptionEntity.getTopUp() != null)
+            amount += subscriptionEntity.getTopUpTime() * subscriptionEntity.getTopUp().cost;
 
         System.out.println("RENEWAL_AMOUNT " + amount);
 
