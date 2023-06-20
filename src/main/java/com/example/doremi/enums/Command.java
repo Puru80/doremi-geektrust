@@ -1,8 +1,0 @@
-package com.example.doremi.enums;
-
-public enum Command {
-    START_SUBSCRIPTION,
-    ADD_SUBSCRIPTION, // SUBSCRIPTION_CATEGORY PLAN_NAME
-    ADD_TOPUP, //TOP_UP_NAME NO_OF_MONTHS
-    PRINT_RENEWAL_DETAILS
-}

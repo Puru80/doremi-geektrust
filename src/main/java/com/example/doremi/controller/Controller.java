@@ -1,6 +1,6 @@
 package com.example.doremi.controller;
 
-import com.example.doremi.enums.Command;
+import com.example.doremi.enums.CommandOperator;
 import com.example.doremi.enums.Plans;
 import com.example.doremi.enums.SubscriptionCategory;
 import com.example.doremi.enums.TopUp;
@@ -11,7 +11,7 @@ public class Controller {
     public static void route(String[] commands){
         String command = commands[0];
 
-        Command command1 = Command.valueOf(command);
+        CommandOperator command1 = CommandOperator.valueOf(command);
 
         switch (command1){
             case START_SUBSCRIPTION:

@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
+public class DoremiApplication {
     public static void main(String[] args) {
         try {
             // the file to be opened for reading
@@ -20,6 +20,7 @@ public class Main {
             }
             sc.close();
         } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
