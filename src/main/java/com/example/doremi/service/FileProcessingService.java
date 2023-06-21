@@ -2,6 +2,7 @@ package com.example.doremi.service;
 
 import com.example.doremi.enums.CommandOperator;
 import com.example.doremi.exception.InvalidInputException;
+import com.example.doremi.model.Command;
 
 import java.io.*;
 
@@ -14,7 +15,7 @@ public class FileProcessingService {
         reader = new BufferedReader(new FileReader(file));
     }
 
-    /*public CommandOperator processLine() throws InvalidInputException, IOException {
+    public Command processLine() throws InvalidInputException, IOException {
         String inputString = reader.readLine();
         if(inputString == null){
             return null;
@@ -28,7 +29,7 @@ public class FileProcessingService {
             System.out.println(e.getMessage());
             return processLine();
         }
-    }*/
+    }
 
     private boolean isEmpty(String line) {
         return line==null || line.length()==0 || line.trim().isEmpty() || line.trim().startsWith("#");

@@ -1,4 +1,4 @@
-package com.example.doremi.controller;
+package com.example.doremi.concrete;
 
 import com.example.doremi.enums.CommandOperator;
 import com.example.doremi.enums.Plans;
@@ -6,7 +6,18 @@ import com.example.doremi.enums.SubscriptionCategory;
 import com.example.doremi.enums.TopUp;
 import com.example.doremi.service.Service;
 
+import java.util.HashMap;
+import java.util.TreeMap;
+
 public class Controller {
+
+    private final String controllerName;
+
+    public Controller(String name) {
+        this.controllerName = name;
+
+    }
+
 
     public static void route(String[] commands){
         String command = commands[0];
