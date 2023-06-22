@@ -1,25 +1,21 @@
 package com.example.doremi.concrete;
 
-import com.example.doremi.enums.CommandOperator;
-import com.example.doremi.enums.Plans;
-import com.example.doremi.enums.SubscriptionCategory;
-import com.example.doremi.enums.TopUp;
-import com.example.doremi.service.Service;
+import com.example.doremi.model.SubscriptionPOJO;
 
-import java.util.HashMap;
-import java.util.TreeMap;
+import java.util.Map;
 
 public class Controller {
 
     private final String controllerName;
+    private final Map<String, SubscriptionPOJO> subscriptionMap;
 
-    public Controller(String name) {
+    public Controller(String name, Map<String, SubscriptionPOJO> subscriptionMap) {
         this.controllerName = name;
+        this.subscriptionMap = subscriptionMap;
 
     }
 
-
-    public static void route(String[] commands){
+    /*public static void route(String[] commands){
         String command = commands[0];
 
         CommandOperator command1 = CommandOperator.valueOf(command);
@@ -44,6 +40,6 @@ public class Controller {
                 Service.printRenewalDetails();
                 break;
         }
-    }
+    }*/
 
 }

@@ -12,5 +12,4 @@ public class SubscriptionPOJO {
     private int personalSubscriptionCost;
     private int premiumSubscriptionCost;
 
-
 }

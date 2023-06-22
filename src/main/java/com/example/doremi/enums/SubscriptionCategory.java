@@ -10,7 +10,7 @@ public enum SubscriptionCategory {
     public final int premium;
 
     private SubscriptionCategory(String name, int personal, int premium) {
-            this.name = name;
+        this.name = name;
         this.personal = personal;
         this.premium = premium;
     }
