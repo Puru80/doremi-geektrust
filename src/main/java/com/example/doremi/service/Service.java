@@ -98,9 +98,4 @@ public class Service {
 
     }
 
-    /*public static void main(String[] args) {
-        startSubscription("20-13-2022");
-    }*/
-
-
 }
