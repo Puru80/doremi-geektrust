@@ -1,13 +1,12 @@
 package com.example.doremi.service.impl;
 
 import com.example.doremi.constants.Constants;
-import com.example.doremi.entity.SubscriptionEntity;
+import com.example.doremi.model.SubscriptionEntity;
 import com.example.doremi.model.Command;
 import com.example.doremi.service.CommandExecutor;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class StartSubscriptionCommandExecutor implements CommandExecutor {

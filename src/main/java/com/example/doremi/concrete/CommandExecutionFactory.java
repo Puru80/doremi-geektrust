@@ -4,6 +4,7 @@ import com.example.doremi.model.Command;
 import com.example.doremi.service.CommandExecutor;
 import com.example.doremi.service.impl.AddSubscriptionCommandExecutor;
 import com.example.doremi.service.impl.AddTopUpCommandExecutor;
+import com.example.doremi.service.impl.PrintRenewalDetailsCommandExecutor;
 import com.example.doremi.service.impl.StartSubscriptionCommandExecutor;
 
 public class CommandExecutionFactory {
@@ -20,6 +21,9 @@ public class CommandExecutionFactory {
                     break;
                 case ADD_TOPUP:
                     executor = new AddTopUpCommandExecutor();
+                    break;
+                case PRINT_RENEWAL_DETAILS:
+                    executor = new PrintRenewalDetailsCommandExecutor();
                     break;
                 default:
                     break;

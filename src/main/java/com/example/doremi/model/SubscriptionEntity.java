@@ -1,4 +1,4 @@
-package com.example.doremi.entity;
+package com.example.doremi.model;
 
 import com.example.doremi.enums.Plans;
 import com.example.doremi.enums.SubscriptionCategory;

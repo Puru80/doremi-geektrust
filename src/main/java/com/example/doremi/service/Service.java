@@ -1,6 +1,6 @@
 package com.example.doremi.service;
 
-import com.example.doremi.entity.SubscriptionEntity;
+import com.example.doremi.model.SubscriptionEntity;
 import com.example.doremi.enums.Plans;
 import com.example.doremi.enums.SubscriptionCategory;
 import com.example.doremi.enums.TopUp;
