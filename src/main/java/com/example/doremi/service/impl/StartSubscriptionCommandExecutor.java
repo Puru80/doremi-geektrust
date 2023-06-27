@@ -1,25 +1,31 @@
 package com.example.doremi.service.impl;
 
+import com.example.doremi.constants.Constants;
+import com.example.doremi.entity.SubscriptionEntity;
 import com.example.doremi.model.Command;
 import com.example.doremi.service.CommandExecutor;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class StartSubscriptionCommandExecutor implements CommandExecutor {
 
-    public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
     @Override
-    public void executeCommand(Command command) {
+    public void executeCommand(SubscriptionEntity subscriptionEntity, Command command) {
         List<String> params = command.getCommandParams();
 
-        LocalDate startDate = LocalDate.parse(params.get(0), formatter);
+        try {
+            String date = params.get(0);
 
-//        subscriptionEntity.setStartDate(LocalDate.parse(startDate.format(formatter), formatter));
+            LocalDate startDate = LocalDate.parse(date, Constants.formatter);
+
+            subscriptionEntity.setStartDate(LocalDate.parse(startDate.format(Constants.formatter), Constants.formatter));
+        } catch (DateTimeException e) {
+            System.out.println("INVALID_DATE");
+        }
     }
-
 
 
 }

@@ -1,10 +1,10 @@
 package com.example.doremi.service;
 
+import com.example.doremi.entity.SubscriptionEntity;
 import com.example.doremi.model.Command;
 
 
 public interface CommandExecutor {
 
-    void executeCommand(Command command);
-
+    void executeCommand(SubscriptionEntity subscriptionEntity, Command command);
 }
