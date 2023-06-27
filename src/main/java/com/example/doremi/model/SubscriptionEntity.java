@@ -1,4 +1,4 @@
-package com.example.doremi.entity;
+package com.example.doremi.model;
 
 import com.example.doremi.enums.Plans;
 import com.example.doremi.enums.SubscriptionCategory;
@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 

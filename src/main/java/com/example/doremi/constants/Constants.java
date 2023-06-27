@@ -1,6 +1,10 @@
 package com.example.doremi.constants;
 
+import java.time.format.DateTimeFormatter;
+
 public class Constants {
+
+    public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public static String getValue(String input) {
         String value = "";

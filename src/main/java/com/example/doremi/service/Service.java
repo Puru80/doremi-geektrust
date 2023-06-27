@@ -1,6 +1,6 @@
 package com.example.doremi.service;
 
-import com.example.doremi.entity.SubscriptionEntity;
+import com.example.doremi.model.SubscriptionEntity;
 import com.example.doremi.enums.Plans;
 import com.example.doremi.enums.SubscriptionCategory;
 import com.example.doremi.enums.TopUp;
@@ -9,7 +9,6 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Service {
@@ -98,10 +97,5 @@ public class Service {
         System.out.println("RENEWAL_AMOUNT " + amount);
 
     }
-
-    /*public static void main(String[] args) {
-        startSubscription("20-13-2022");
-    }*/
-
 
 }
