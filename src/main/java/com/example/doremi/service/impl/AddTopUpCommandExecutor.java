@@ -1,5 +1,6 @@
 package com.example.doremi.service.impl;
 
+import com.example.doremi.exception.AddTopUpFailedException;
 import com.example.doremi.model.SubscriptionEntity;
 import com.example.doremi.enums.TopUp;
 import com.example.doremi.model.Command;
@@ -10,20 +11,17 @@ import java.util.List;
 public class AddTopUpCommandExecutor implements CommandExecutor {
 
     @Override
-    public void executeCommand(SubscriptionEntity subscriptionEntity, Command command) {
+    public void executeCommand(SubscriptionEntity subscriptionEntity, Command command) throws Exception{
         if (subscriptionEntity.getStartDate() == null) {
-            System.out.println("ADD_TOPUP_FAILED INVALID_DATE");
-            return;
+            throw new AddTopUpFailedException("INVALID_DATE");
         }
 
         if (subscriptionEntity.getSubscriptions().isEmpty()) {
-            System.out.println("ADD_TOPUP_FAILED SUBSCRIPTIONS_NOT_FOUND");
-            return;
+            throw new AddTopUpFailedException("SUBSCRIPTIONS_NOT_FOUND");
         }
 
         if (subscriptionEntity.getTopUp() != null) {
-            System.out.println("ADD_TOPUP_FAILED DUPLICATE_TOPUP");
-            return;
+            throw new AddTopUpFailedException("DUPLICATE_TOPUP");
         }
 
         getTopUp(command.getCommandParams(), subscriptionEntity);

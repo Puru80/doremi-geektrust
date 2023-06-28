@@ -1,5 +1,6 @@
 package com.example.doremi.concrete;
 
+import com.example.doremi.exception.AddSubscriptionFailedException;
 import com.example.doremi.model.SubscriptionEntity;
 import com.example.doremi.exception.InvalidInputException;
 import com.example.doremi.model.Command;
@@ -15,13 +16,13 @@ public class Controller {
         this.subscriptionEntity = new SubscriptionEntity();
     }
 
-    public void fulfillCommand(Command inputCommand) throws InvalidInputException {
+    public void fulfillCommand(Command inputCommand) {
         CommandExecutor commandExecutor = CommandExecutionFactory.getExecutor(inputCommand);
-//        try {
+        try {
             commandExecutor.executeCommand(subscriptionEntity, inputCommand);
-        /*} catch (CourseFullException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
-        }*/
+        }
     }
 
 }
