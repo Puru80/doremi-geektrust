@@ -6,6 +6,12 @@ public class Constants {
 
     public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
+    public static class ExceptionMessages {
+        public static final String ADD_SUBSCRIPTION_FAILED = "ADD_SUBSCRIPTION_FAILED";
+        public static final String ADD_TOPUP_FAILED = "ADD_TOPUP_FAILED";
+        public static final String SUBSCRIPTIONS_NOT_FOUND = "SUBSCRIPTIONS_NOT_FOUND";
+    }
+
     public static String getValue(String input) {
         String value = "";
         switch (input) {

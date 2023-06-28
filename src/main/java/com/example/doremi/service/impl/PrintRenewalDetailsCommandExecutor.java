@@ -1,6 +1,7 @@
 package com.example.doremi.service.impl;
 
 import com.example.doremi.constants.Constants;
+import com.example.doremi.exception.SubscriptionNotFoundException;
 import com.example.doremi.model.SubscriptionEntity;
 import com.example.doremi.enums.Plans;
 import com.example.doremi.enums.SubscriptionCategory;
@@ -12,11 +13,10 @@ import java.util.Map;
 public class PrintRenewalDetailsCommandExecutor implements CommandExecutor {
 
     @Override
-    public void executeCommand(SubscriptionEntity subscriptionEntity, Command command) {
+    public void executeCommand(SubscriptionEntity subscriptionEntity, Command command) throws Exception {
 
         if (subscriptionEntity.getSubscriptions().isEmpty()) {
-            System.out.println("SUBSCRIPTIONS_NOT_FOUND");
-            return;
+            throw new SubscriptionNotFoundException();
         }
 
         renewalReminder(subscriptionEntity);
