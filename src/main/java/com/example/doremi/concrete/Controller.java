@@ -1,9 +1,7 @@
 package com.example.doremi.concrete;
 
-import com.example.doremi.exception.AddSubscriptionFailedException;
-import com.example.doremi.model.SubscriptionEntity;
-import com.example.doremi.exception.InvalidInputException;
 import com.example.doremi.model.Command;
+import com.example.doremi.model.SubscriptionEntity;
 import com.example.doremi.service.CommandExecutor;
 
 public class Controller {
