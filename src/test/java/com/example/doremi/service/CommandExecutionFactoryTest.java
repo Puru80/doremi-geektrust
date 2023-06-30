@@ -23,7 +23,7 @@ public class CommandExecutionFactoryTest {
     @Test
     public void getExecutorTest() {
         Assertions.assertTrue(CommandExecutionFactory.getExecutor(command1) instanceof StartSubscriptionCommandExecutor);
-        Assertions.assertFalse(CommandExecutionFactory.getExecutor(command2) instanceof AddSubscriptionCommandExecutor);
+        Assertions.assertFalse(CommandExecutionFactory.getExecutor(command2) instanceof StartSubscriptionCommandExecutor);
     }
 
 

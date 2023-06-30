@@ -1,6 +1,10 @@
 package com.example.doremi.service;
 
 import com.example.doremi.concrete.CommandExecutionFactory;
+import com.example.doremi.constants.Constants;
+import com.example.doremi.enums.Plans;
+import com.example.doremi.enums.SubscriptionCategory;
+import com.example.doremi.enums.TopUp;
 import com.example.doremi.model.Command;
 import com.example.doremi.model.SubscriptionEntity;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,6 +12,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.time.LocalDate;
+import java.util.LinkedHashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +29,12 @@ public class PrintRenewalDetailsCommandExecutorTest {
         System.setOut(new PrintStream(outContent));
         command1 = CommandService.getInstance().getCommandFromString("PRINT_RENEWAL_DETAILS");
         executor = CommandExecutionFactory.getExecutor(command1);
-        subscriptionEntity = new SubscriptionEntity();
+        subscriptionEntity = new SubscriptionEntity(
+                LocalDate.parse("20-02-2022", Constants.formatter),
+                new LinkedHashMap<SubscriptionCategory, Plans>() {{
+                    put(SubscriptionCategory.MUSIC, Plans.PERSONAL);
+                }},
+                TopUp.FOUR_DEVICE, 3);
     }
 
     @Test
@@ -34,7 +45,8 @@ public class PrintRenewalDetailsCommandExecutorTest {
     @Test
     public void testSuccessMessage() throws Exception {
         executor.executeCommand(subscriptionEntity, command1);
-        assertEquals("", outContent.toString().trim());
+        assertEquals("RENEWAL_REMINDER MUSIC 10-03-2022\n" +
+                "RENEWAL_AMOUNT 250", outContent.toString().trim());
     }
 
 }
